@@ -1,4 +1,5 @@
 import json
+import sys
 class UserData:
     def __init__(self, uname, uid):
         self.fullname = uname
@@ -74,13 +75,9 @@ def parser(passwdfile, groupsfile):
 
 if __name__ == "__main__":
 
-    # For this sample case, pass the default filenames:
-    passwdFileName = "./etc_passwd.txt"
-    groupsFileName = "./etc_groups.txt"
-
-    # can also take input from user for the path to /etc/passwd & /etc/groups file
-    # passwdFileName = input("Enter path/filename for /etc/passwd")
-    # groupsFileName = input("Enter path/filename for /etc/groups")
+    # Fetch path/filename for etc/passwd and etc/groups from command line arguments
+    passwdFileName = sys.argv[1]
+    groupsFileName = sys.argv[2]
 
     # while running a cron job, the parser function should be called periodically and #
     # each time pass the path/filename for /etc/passwd and /etc/groups #
