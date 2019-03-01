@@ -1,0 +1,39 @@
+{
+    "root": {
+        "uid": "0",
+        "full_name": "/root",
+        "groups": [
+            "root",
+            "bin",
+            "daemon",
+            "sys",
+            "adm"
+        ]
+    },
+    "bin": {
+        "uid": "1",
+        "full_name": "bin",
+        "groups": [
+            "bin",
+            "daemon",
+            "sys"
+        ]
+    },
+    "daemon": {
+        "uid": "2",
+        "full_name": "daemon",
+        "groups": [
+            "bin",
+            "daemon",
+            "adm"
+        ]
+    },
+    "adm": {
+        "uid": "3",
+        "full_name": "adm",
+        "groups": [
+            "sys",
+            "adm"
+        ]
+    }
+}
