@@ -58,14 +58,16 @@ def parser(passwdfile, groupsfile):
     # if read both file successfully then make into JSON format
     if is_read_successful:
         # print data in JSON format
-        data = {}
-        for user in list_of_users:
-            data[user] = {"uid": "0", "full_name": "", "groups": []}
-            data[user]["uid"] = list_of_users[user].uid
-            data[user]["full_name"] = list_of_users[user].fullname
-            data[user]["groups"] = list_of_users[user].groups
-        print(json.dumps(data, indent=4))
-
+        with open("output.txt", "w") as fp:
+            data = {}
+            for user in list_of_users:
+                data[user] = {"uid": "0", "full_name": "", "groups": []}
+                data[user]["uid"] = list_of_users[user].uid
+                data[user]["full_name"] = list_of_users[user].fullname
+                data[user]["groups"] = list_of_users[user].groups
+            print(json.dumps(data, indent=4))
+            json.dump(data, fp, indent=4)
+            fp.close()
     else:
         print("Reading /etc/passwd or /etc/groups was not successful.")
 

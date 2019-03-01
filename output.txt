@@ -1,7 +1,7 @@
 {
     "root": {
         "uid": "0",
-        "full_name": "/root",
+        "full_name": "root",
         "groups": [
             "root",
             "bin",
